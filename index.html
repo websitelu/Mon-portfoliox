@@ -57,6 +57,9 @@
             position: relative;
             cursor: pointer;
         }
+        .audio-player-progress:active {
+            transform: translateY(1px); /* Little press effect */
+        }
         .audio-player-progress-bar {
             background-color: #FFA500;
             height: 100%;
@@ -77,6 +80,7 @@
             opacity: 0;
             transition: opacity 0.2s, transform 0.2s;
             pointer-events: none;
+            z-index: 10;
         }
         .audio-player-progress:hover .tooltip {
             opacity: 1;
@@ -94,7 +98,6 @@
 
     <div class="container mx-auto p-8">
 
-        <!-- Header Section -->
         <header class="text-center mb-16">
             <h1 class="text-5xl font-bold text-white mb-2">Light & Co.</h1>
             <p class="text-2xl text-orange-300 font-semibold mb-6">Voix-Off & Rédactrice Web</p>
@@ -103,7 +106,8 @@
             </p>
         </header>
 
-        <!-- Services Section -->
+        ---
+
         <section class="mb-16">
             <h2 class="text-4xl font-bold mb-8 text-center text-[#FFA500]">Mes Services</h2>
             <div class="grid md:grid-cols-2 gap-8">
@@ -113,26 +117,29 @@
                         Pour vos publicités, e-learning, vidéos d'entreprise, ou podcasts. Je donne une intonation professionnelle et engageante à vos messages.
                     </p>
                     <p class="text-sm italic">
-                        Style : corporate, énergique, rassurant, narratif, enfantin.
+                        Style : **corporate**, **énergique**, **rassurant**, **narratif**, **enfantin**.
                     </p>
                 </div>
                 <div class="card">
                     <h3 class="text-2xl font-semibold mb-4">Rédaction Web</h3>
                     <p class="mb-4 text-orange-200">
-                        Je rédige des articles de blog, des pages web et des scripts vidéo optimisés pour le référencement (SEO).
+                        Je rédige des articles de blog, des pages web et des scripts vidéo optimisés pour le **référencement (SEO)**.
                     </p>
                     <p class="text-sm italic">
-                        Ton : professionnel, amical, informatif.
+                        Ton : **professionnel**, **amical**, **informatif**.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Portfolio/Demos Section -->
+        ---
+
         <section class="mb-16">
-            <h2 class="text-4xl font-bold mb-8 text-center text-[#FFA500]">Mes Démos</h2>
+            <h2 class="text-4xl font-bold mb-8 text-center text-[#FFA500]">Mes Démos Voix-Off</h2>
             <div class="space-y-6">
-                <!-- Audio Demo 1 -->
+                
+                <h3 class="text-2xl font-semibold mt-8 mb-4 border-b border-orange-400 pb-2">Narrations & E-Learning</h3>
+
                 <div class="audio-player" data-src="1000430332.mp3">
                     <div class="audio-player-buttons">
                         <button class="play-pause audio-player-button">
@@ -145,16 +152,15 @@
                         </button>
                     </div>
                     <div class="flex-1">
-                        <div class="font-bold text-lg mb-1">Démo Voix-Off Narration </div>
+                        <div class="font-bold text-lg mb-1">Démo Narration 1 (Corporate)</div>
                         <div class="audio-player-progress" data-tooltip="0:00 / 0:00">
                             <div class="audio-player-progress-bar"></div>
                             <span class="tooltip">0:00 / 0:00</span>
                         </div>
                     </div>
                 </div>
-
-                <!-- Audio Demo 2 -->
-                <div class=
+                
+                <div class="audio-player" data-src="1000528765.mp3">
                     <div class="audio-player-buttons">
                         <button class="play-pause audio-player-button">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 play-icon">
@@ -166,7 +172,149 @@
                         </button>
                     </div>
                     <div class="flex-1">
-                        <div class="font-bold text-lg mb-1">Démo Voix-Off </div>
+                        <div class="font-bold text-lg mb-1">Démo Narration 2 (Pédagogique)</div>
+                        <div class="audio-player-progress" data-tooltip="0:00 / 0:00">
+                            <div class="audio-player-progress-bar"></div>
+                            <span class="tooltip">0:00 / 0:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="audio-player" data-src="1000528801.mp3">
+                    <div class="audio-player-buttons">
+                        <button class="play-pause audio-player-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 play-icon">
+                                <path fill-rule="evenodd" d="M4.5 5.653c0-1.445 1.723-2.328 2.907-1.638l10.363 5.711c1.18.691 1.18 1.864 0 2.555L7.408 20.916c-1.184.69-2.907-.193-2.907-1.638V5.653Z" clip-rule="evenodd" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 pause-icon hidden">
+                                <path fill-rule="evenodd" d="M6.75 5.25a.75.75 0 0 1 .75-.75H9a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H7.5a.75.75 0 0 1-.75-.75V5.25Zm7.5 0A.75.75 0 0 1 15 4.5h1.5a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H15a.75.75 0 0 1-.75-.75V5.25Z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-bold text-lg mb-1">Démo Narration 3 (Clair et Amical)</div>
+                        <div class="audio-player-progress" data-tooltip="0:00 / 0:00">
+                            <div class="audio-player-progress-bar"></div>
+                            <span class="tooltip">0:00 / 0:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="audio-player" data-src="1000528798.mp3">
+                    <div class="audio-player-buttons">
+                        <button class="play-pause audio-player-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 play-icon">
+                                <path fill-rule="evenodd" d="M4.5 5.653c0-1.445 1.723-2.328 2.907-1.638l10.363 5.711c1.18.691 1.18 1.864 0 2.555L7.408 20.916c-1.184.69-2.907-.193-2.907-1.638V5.653Z" clip-rule="evenodd" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 pause-icon hidden">
+                                <path fill-rule="evenodd" d="M6.75 5.25a.75.75 0 0 1 .75-.75H9a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H7.5a.75.75 0 0 1-.75-.75V5.25Zm7.5 0A.75.75 0 0 1 15 4.5h1.5a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H15a.75.75 0 0 1-.75-.75V5.25Z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-bold text-lg mb-1">Démo Narration 4 (Tutoriel Calme)</div>
+                        <div class="audio-player-progress" data-tooltip="0:00 / 0:00">
+                            <div class="audio-player-progress-bar"></div>
+                            <span class="tooltip">0:00 / 0:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="audio-player" data-src="1000528808.mp3">
+                    <div class="audio-player-buttons">
+                        <button class="play-pause audio-player-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 play-icon">
+                                <path fill-rule="evenodd" d="M4.5 5.653c0-1.445 1.723-2.328 2.907-1.638l10.363 5.711c1.18.691 1.18 1.864 0 2.555L7.408 20.916c-1.184.69-2.907-.193-2.907-1.638V5.653Z" clip-rule="evenodd" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 pause-icon hidden">
+                                <path fill-rule="evenodd" d="M6.75 5.25a.75.75 0 0 1 .75-.75H9a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H7.5a.75.75 0 0 1-.75-.75V5.25Zm7.5 0A.75.75 0 0 1 15 4.5h1.5a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H15a.75.75 0 0 1-.75-.75V5.25Z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-bold text-lg mb-1">Démo Narration 5 (Explicatif)</div>
+                        <div class="audio-player-progress" data-tooltip="0:00 / 0:00">
+                            <div class="audio-player-progress-bar"></div>
+                            <span class="tooltip">0:00 / 0:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-2xl font-semibold mt-8 mb-4 border-b border-orange-400 pb-2">Publicité, IVR & Autres</h3>
+                
+                <div class="audio-player" data-src="1000526503.mp3">
+                    <div class="audio-player-buttons">
+                        <button class="play-pause audio-player-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 play-icon">
+                                <path fill-rule="evenodd" d="M4.5 5.653c0-1.445 1.723-2.328 2.907-1.638l10.363 5.711c1.18.691 1.18 1.864 0 2.555L7.408 20.916c-1.184.69-2.907-.193-2.907-1.638V5.653Z" clip-rule="evenodd" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 pause-icon hidden">
+                                <path fill-rule="evenodd" d="M6.75 5.25a.75.75 0 0 1 .75-.75H9a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H7.5a.75.75 0 0 1-.75-.75V5.25Zm7.5 0A.75.75 0 0 1 15 4.5h1.5a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H15a.75.75 0 0 1-.75-.75V5.25Z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-bold text-lg mb-1">Démo Publicité (Calme/Rassurant)</div>
+                        <div class="audio-player-progress" data-tooltip="0:00 / 0:00">
+                            <div class="audio-player-progress-bar"></div>
+                            <span class="tooltip">0:00 / 0:00</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="audio-player" data-src="1000526426.mp3">
+                    <div class="audio-player-buttons">
+                        <button class="play-pause audio-player-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 play-icon">
+                                <path fill-rule="evenodd" d="M4.5 5.653c0-1.445 1.723-2.328 2.907-1.638l10.363 5.711c1.18.691 1.18 1.864 0 2.555L7.408 20.916c-1.184.69-2.907-.193-2.907-1.638V5.653Z" clip-rule="evenodd" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 pause-icon hidden">
+                                <path fill-rule="evenodd" d="M6.75 5.25a.75.75 0 0 1 .75-.75H9a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H7.5a.75.75 0 0 1-.75-.75V5.25Zm7.5 0A.75.75 0 0 1 15 4.5h1.5a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H15a.75.75 0 0 1-.75-.75V5.25Z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-bold text-lg mb-1">Démo Tutoriel (Pédagogique)</div>
+                        <div class="audio-player-progress" data-tooltip="0:00 / 0:00">
+                            <div class="audio-player-progress-bar"></div>
+                            <span class="tooltip">0:00 / 0:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="audio-player" data-src="1000526466.mp3">
+                    <div class="audio-player-buttons">
+                        <button class="play-pause audio-player-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 play-icon">
+                                <path fill-rule="evenodd" d="M4.5 5.653c0-1.445 1.723-2.328 2.907-1.638l10.363 5.711c1.18.691 1.18 1.864 0 2.555L7.408 20.916c-1.184.69-2.907-.193-2.907-1.638V5.653Z" clip-rule="evenodd" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 pause-icon hidden">
+                                <path fill-rule="evenodd" d="M6.75 5.25a.75.75 0 0 1 .75-.75H9a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H7.5a.75.75 0 0 1-.75-.75V5.25Zm7.5 0A.75.75 0 0 1 15 4.5h1.5a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H15a.75.75 0 0 1-.75-.75V5.25Z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-bold text-lg mb-1">Démo Dramatique (Narration/Conte)</div>
+                        <div class="audio-player-progress" data-tooltip="0:00 / 0:00">
+                            <div class="audio-player-progress-bar"></div>
+                            <span class="tooltip">0:00 / 0:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="audio-player" data-src="1000526529.mp3">
+                    <div class="audio-player-buttons">
+                        <button class="play-pause audio-player-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 play-icon">
+                                <path fill-rule="evenodd" d="M4.5 5.653c0-1.445 1.723-2.328 2.907-1.638l10.363 5.711c1.18.691 1.18 1.864 0 2.555L7.408 20.916c-1.184.69-2.907-.193-2.907-1.638V5.653Z" clip-rule="evenodd" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 pause-icon hidden">
+                                <path fill-rule="evenodd" d="M6.75 5.25a.75.75 0 0 1 .75-.75H9a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H7.5a.75.75 0 0 1-.75-.75V5.25Zm7.5 0A.75.75 0 0 1 15 4.5h1.5a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H15a.75.75 0 0 1-.75-.75V5.25Z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-bold text-lg mb-1">Démo Message Téléphonique (IVR)</div>
                         <div class="audio-player-progress" data-tooltip="0:00 / 0:00">
                             <div class="audio-player-progress-bar"></div>
                             <span class="tooltip">0:00 / 0:00</span>
@@ -177,7 +325,8 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
+        ---
+
         <section class="text-center">
             <h2 class="text-4xl font-bold mb-8 text-[#FFA500]">Contactez-moi</h2>
             <div class="card inline-block">
@@ -185,7 +334,7 @@
                     Prêt(e) à démarrer votre projet ?
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                    <a href="mailto:lumenattikpo@gmail.com" class="bg-[#FFA500] text-[#36013F] font-bold py-3 px-8 rounded-full transition-transform hover:scale-105">
+                    <a href="mailto:lumenattikpo@gmail.com" class="bg-[#FFA500]text-[#36013F] font-bold py-3 px-8 rounded-full transition-transform hover:scale-105">
                         Envoyer un e-mail
                     </a>
                     <a href="https://www.linkedin.com/in/lumen-attikpo-7a7386263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"class="bg-gray-700 text-white font-bold py-3 px-8 rounded-full transition-transform hover:scale-105">
@@ -206,7 +355,10 @@
             let currentAudio = null;
 
             players.forEach(player => {
-                const audio = new Audio(player.dataset.src);
+                // Attach the Audio object to the player DOM node
+                player.audioElement = new Audio(player.dataset.src);
+                const audio = player.audioElement;
+                
                 const playPauseBtn = player.querySelector('.play-pause');
                 const playIcon = player.querySelector('.play-icon');
                 const pauseIcon = player.querySelector('.pause-icon');
@@ -219,15 +371,17 @@
                 });
 
                 playPauseBtn.addEventListener('click', () => {
-                    // Pause other players
+                    // Pause other players if one is currently playing
                     if (currentAudio && currentAudio !== audio) {
                         currentAudio.pause();
+                        // Find the previously playing player and reset its button
                         players.forEach(p => {
-                            if (p.querySelector('audio') === currentAudio) {
+                            if (p.audioElement === currentAudio) {
                                 p.querySelector('.play-icon').classList.remove('hidden');
                                 p.querySelector('.pause-icon').classList.add('hidden');
                             }
                         });
+                        currentAudio = null;
                     }
                     
                     if (audio.paused) {
@@ -253,6 +407,7 @@
                     playIcon.classList.remove('hidden');
                     pauseIcon.classList.add('hidden');
                     progressBar.style.width = '0%';
+                    audio.currentTime = 0; // Reset for next play
                     currentAudio = null;
                 });
 
